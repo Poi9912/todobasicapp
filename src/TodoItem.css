@@ -6,9 +6,10 @@
     border-radius: 15px;
     text-decoration: none;
 }
-.item p{
+
+.item-content{
     margin: 5px 10px 5px 10px;
-    width: 90%;
+    width: 80%;
     display: flex;
     color: black;
     font-size: 1.1em;
@@ -18,7 +19,7 @@
     
 }
 
-.item span{
+.Icon.Icon-delete{
     display: flex;    
     border: none;
     width: 10%;
@@ -28,7 +29,22 @@
     padding: 0;
     align-items: center;
     justify-content: center;
-    font-size: 1.7em;
+    font-size: 1.5em;
     font-weight: bold;
-    transform: rotate(45deg);
+    transform: rotate(0deg);
+}
+
+.Icon.Icon-check{
+    display: flex;    
+    border: none;
+    width: 10%;
+    padding: auto;
+    color: #61df6c;
+    margin: 5px;
+    padding: 0;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    transform: rotate(0deg);
 }

@@ -10,14 +10,7 @@ const todos = [
   { text: "Curso básico react", completed: false },
   { text: "Subir código", completed: false },
   { text: "Preparar aplicación test", completed: false },
-  { text: "Campo de texto largo para generar doble o triple linea dentro del visualizador", completed: false },
-  { text: "Campo de texto largo para generar doble o triple linea dentro del visualizador", completed: false },
-  { text: "Campo de texto largo para generar doble o triple linea dentro del visualizador", completed: false },
-  { text: "Campo de texto largo para generar doble o triple linea dentro del visualizador", completed: false },
-  { text: "Campo de texto largo para generar doble o triple linea dentro del visualizador", completed: false },
-  { text: "Campo de texto largo para generar doble o triple linea dentro del visualizador", completed: false },
-  { text: "Campo de texto largo para generar doble o triple linea dentro del visualizador", completed: false },
-  { text: "Campo de texto largo para generar doble o triple linea dentro del visualizador", completed: false },
+  { text: "Campo de texto largo para generar doble o triple linea dentro del visualizador 1", completed: false },
 ];
 
 function App() {

@@ -4,8 +4,9 @@ import './TodoItem.css';
 function TodoItem(props){
     return(
         <li className="item">
-            <p>{props.text}</p>
-            <span>+</span>
+            <span className={`Icon Icon-check ${props.completed} && 'Icon-check--active'`}> &#10004; </span>
+            <p className={`item-content ${props.completed} && 'item-content--active'`}>{props.text}</p>
+            <span className="Icon Icon-delete">&#10006;</span>
         </li>
     );
 }

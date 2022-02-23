@@ -8,3 +8,7 @@
     border-radius: 5px;
     font-size: 1.2em;
 }
+
+.search-input:focus {
+    outline-color: #6e6e6e;
+}
