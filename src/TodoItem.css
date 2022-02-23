@@ -1,10 +1,11 @@
 .item{
-    margin: 0.5em;
+    margin: 0.5em auto;
     padding: 5px auto;
     display: flex;
     background-color: white;
     border-radius: 15px;
     text-decoration: none;
+    max-width: 550px;
 }
 
 .item-content{
@@ -16,7 +17,11 @@
     text-align: left;
     align-items: center;    
     padding: 0;
-    
+}
+
+.item-content--complete{
+    text-decoration: line-through;
+    color: #7e7e7e;
 }
 
 .Icon.Icon-delete{
@@ -29,22 +34,27 @@
     padding: 0;
     align-items: center;
     justify-content: center;
-    font-size: 1.5em;
+    font-size: 1.3em;
     font-weight: bold;
     transform: rotate(0deg);
 }
 
-.Icon.Icon-check{
+.Icon-check{
     display: flex;    
     border: none;
     width: 10%;
     padding: auto;
-    color: #61df6c;
+    color: #7e7e7e;
     margin: 5px;
     padding: 0;
     align-items: center;
     justify-content: center;
-    font-size: 1.5em;
+    font-size: 1.4em;
     font-weight: bold;
     transform: rotate(0deg);
+    transition: transform 0.3s ease;
+}
+.Icon-check--active{
+    color: #61df6c;
+    transform: rotate(20deg);
 }

@@ -6,9 +6,9 @@ import { TodoItem } from "./TodoItem";
 import { CreateTodoButton } from "./CreateTodoButton";
 
 const todos = [
-  { text: "Cortar cebolla", completed: false },
+  { text: "Cortar cebolla", completed: true },
   { text: "Curso básico react", completed: false },
-  { text: "Subir código", completed: false },
+  { text: "Subir código", completed: true },
   { text: "Preparar aplicación test", completed: false },
   { text: "Campo de texto largo para generar doble o triple linea dentro del visualizador 1", completed: false },
 ];
@@ -20,7 +20,7 @@ function App() {
       <TodoSearch />
       <TodoList>
         {todos.map(todo => (
-          <TodoItem  key={todo.text} text={todo.text} />
+          <TodoItem  key={todo.text} text={todo.text} completed={todo.completed} />
         ))}
       </TodoList>
       <CreateTodoButton />
