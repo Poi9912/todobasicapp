@@ -5,7 +5,7 @@ function TodoItem(props){
     return(
         <li className="item">
             <p>{props.text}</p>
-            <span>X</span>
+            <span>+</span>
         </li>
     );
 }
