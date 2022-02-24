@@ -21,6 +21,6 @@
 }
 
 .create-button:hover {
-    transform: rotate(360deg);
+    transform: rotate(180deg);
     background-color: #81c1e4;
 }
