@@ -1,9 +1,10 @@
 import React from "react";
 import { AppUI } from "./AppUI";
 import { TodoProvider } from "../TodoContext";
-const TodoVersion = "TODOS_V1";
 
-/*const defaultTodos = [
+/*
+const TodoVersion = "TODOS_V1";
+const defaultTodos = [
   { text: "Cortar cebolla", completed: false },
   { text: "Curso básico react", completed: false },
   { text: "Subir código", completed: true },
