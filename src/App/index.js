@@ -9,7 +9,9 @@ const TodoVersion = "TODOS_V1";
   { text: "Subir código", completed: true },
   { text: "Preparar aplicación test", completed: false },
   { text: "Campo de texto largo para generar doble o triple linea dentro del visualizador 1", completed: false },
-];*/
+];
+localStorage.setItem(TodoVersion, JSON.stringify(defaultTodos));
+*/
 
 function useLocalStorage(itemName, initialValue) {
   const [error, setError] = React.useState(false);

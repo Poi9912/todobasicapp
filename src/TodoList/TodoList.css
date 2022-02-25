@@ -7,3 +7,13 @@
     margin: 0;
     padding: 0 1em;
 }
+.status-loading {
+    margin: 15px auto;
+    padding: 10px;
+    max-width: 300px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    background-color: #59607e;
+    color: white;
+}

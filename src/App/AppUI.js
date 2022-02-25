@@ -27,10 +27,9 @@ function AppUI({
         setSearchValue={setSearchValue}
         />
         <TodoList>
-            {error && <p>Se ha generado un error</p>}
-            {loading && <p>Cargando...</p>}
-            {(!loading && !searchedTodos.length) ? <p>Cargando...</p> : null}
-
+            {error && <p className="status-loading">Se ha generado un error</p>}
+            {loading && <p className="status-loading">Cargando...</p>}
+            {(!loading && !searchedTodos.length) ? <p className="status-loading">Crea tu primer ToDo!</p> : null}
             {searchedTodos.map(todo => (
             <TodoItem  
             key={todo.text} 
