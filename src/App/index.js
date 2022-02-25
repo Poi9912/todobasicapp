@@ -11,19 +11,30 @@ const TodoVersion = "TODOS_V1";
   { text: "Campo de texto largo para generar doble o triple linea dentro del visualizador 1", completed: false },
 ];*/
 
-function App() {
+function useLocalStorage(itemName, initialValue) {
 
-  const localStorageTodos = localStorage.getItem(TodoVersion);
-  let parsedTodos;
+  const localStorageItem = localStorage.getItem(itemName);
+  let parsedItem;
 
-  if(!localStorageTodos){
-    localStorage.setItem(TodoVersion, JSON.stringify([]));
-    parsedTodos = [];
+  if(!localStorageItem){
+    localStorage.setItem(itemName, JSON.stringify(initialValue));
+    parsedItem = [];
   } else {
-    parsedTodos = JSON.parse(localStorageTodos);
+    parsedItem = JSON.parse(localStorageItem);
   }
 
-  const [todos, setTodos] = React.useState(parsedTodos);
+  const [item, setItem] = React.useState(parsedItem);
+  const saveItem = (newItem) => {
+    const stringifiedItem = JSON.stringify(newItem);
+    localStorage.setItem(itemName,stringifiedItem);
+    setItem(newItem);
+  }
+  return  [item,saveItem];
+}
+
+function App() {
+
+  const [todos,saveTodos] = useLocalStorage(TodoVersion,[]);
   const [searchValue, setSearchValue] = React.useState('');
   const completedTodos = todos.filter(todo => !!todo.completed).length;
   const totalTodos = todos.length;
@@ -38,12 +49,6 @@ function App() {
       const searchtext = searchValue.toLowerCase();
       return todotext.includes(searchtext);
     });
-  }
-
-  const saveTodos = (newTodos) => {
-    const stringifiedTodos = JSON.stringify(newTodos);
-    localStorage.setItem(TodoVersion,stringifiedTodos);
-    setTodos(newTodos);
   }
 
   const completeTodo = (text) => {
