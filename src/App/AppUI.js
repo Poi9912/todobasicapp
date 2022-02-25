@@ -1,32 +1,26 @@
 import React from "react";
+import { TodoContext } from "../TodoContext";
 import { TodoCounter } from "../TodoCounter";
 import { TodoSearch } from "../TodoSearch";
 import { TodoList } from "../TodoList";
 import { TodoItem } from "../TodoItem";
 import { CreateTodoButton } from "../CreateTodoButton";
 
-function AppUI({
-    loading,
-    error,
-    total,
-    complete,
-    searchValue,
-    setSearchValue,
-    searchedTodos,
-    completeTodo,
-    deleteTodo
-}){
-    return(
-        <React.Fragment>
-        <TodoCounter 
-        total={total}
-        complete={complete}
-        />
-        <TodoSearch
-        searchValue={searchValue}
-        setSearchValue={setSearchValue}
-        />
-        <TodoList>
+function AppUI(){
+  return(
+    <React.Fragment>
+    <TodoCounter />
+    <TodoSearch />
+    
+    <TodoContext.Consumer>
+      {({
+          error,
+          loading,
+          searchedTodos,
+          completeTodo,
+          deleteTodo
+        })=>(
+          <TodoList>
             {error && <p className="status-loading">Se ha generado un error</p>}
             {loading && <p className="status-loading">Cargando...</p>}
             {(!loading && !searchedTodos.length) ? <p className="status-loading">Crea tu primer ToDo!</p> : null}
@@ -43,10 +37,11 @@ function AppUI({
             }}
             />
             ))}
-        </TodoList>
-        <CreateTodoButton />
-        </React.Fragment>
-    );
+          </TodoList>)}
+    </TodoContext.Consumer>
+    <CreateTodoButton />
+    </React.Fragment>
+  );
 }
 
 export { AppUI };
