@@ -10,7 +10,6 @@
     border-radius: 100%;
     background-color: #34a6e3;
     border-style: none;
-    border-color: none;
     align-items: center;
     justify-content: center;    
     color: black;
@@ -18,9 +17,11 @@
     font-size: 25px;
     transform:  rotate(0);
     transition: transform 0.3s ease;
+    z-index: 1;
 }
 
 .create-button:hover {
     transform: rotate(180deg);
     background-color: #81c1e4;
 }
+
